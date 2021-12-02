@@ -1,6 +1,6 @@
 import React from "react";
 
-const BillSpecs = ({bill}) => {
+const BillSpecs = ({ bill }) => {
   return (
     <div className="ui segment">
       <div className="ui two column centered grid">
@@ -19,8 +19,8 @@ const BillSpecs = ({bill}) => {
               {bill.catchphrase}
             </p>
             <strong>
-              Class: {bill.bill_class}
-              <i className={billTypeClasses[bill.bill_class]} />
+              {/* Class: {bill.bill_class}
+              <i className={billTypeClasses[bill.bill_class]} /> */}
             </strong>
             <br />
             <div className="ui segment">

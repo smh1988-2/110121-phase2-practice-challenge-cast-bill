@@ -1,17 +1,17 @@
+//In order to make firing easier the BillCard and BillCastCard are slightly different
+
 import React from "react";
 
-//moved the Event Listener to the image instead of the entire card, to make using the Fire button easier
-
-const BillCard = ({ bill, addBillToCast, fireBillMurray }) => {
+const BillCastCard = ({ bill, removeBillFromCast }) => {
   return (
     <div className="ui column">
-      <div className="ui card" key={bill.id}>
+      <div
+        className="ui card"
+        key={bill.id}
+        onClick={() => removeBillFromCast(bill)}
+      >
         <div className="image">
-          <img
-            alt={bill.name}
-            src={bill.photo}
-            onClick={() => addBillToCast(bill)}
-          />
+          <img alt={bill.name} src={bill.photo} />
         </div>
         <div className="content">
           <div className="header">{bill.name}</div>
@@ -34,12 +34,14 @@ const BillCard = ({ bill, addBillToCast, fireBillMurray }) => {
           </span>
           <span>
             <div className="ui center aligned segment basic">
-              <button
+              {/* <button
                 className="ui mini blue button"
-                onClick={() => fireBillMurray(bill)}
+                onClick={() =>
+                  console.log('add code to connect event listener')
+                }
               >
                 FIRE
-              </button>
+              </button> */}
             </div>
           </span>
         </div>
@@ -48,4 +50,4 @@ const BillCard = ({ bill, addBillToCast, fireBillMurray }) => {
   );
 };
 
-export default BillCard;
+export default BillCastCard;
